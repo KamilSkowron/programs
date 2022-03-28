@@ -23,7 +23,7 @@ def save_file():
                                         filetypes=[("All Files", "*.*"),
                                                     ("Text Documents", "*.txt")])
     
-    
+
     if file is None:
         return
 
