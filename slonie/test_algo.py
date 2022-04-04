@@ -1,12 +1,13 @@
 import unittest
 from algo_testy import Zoo
 
+
 class TestZoo(unittest.TestCase):
 
     def test_funkcja0(self):
         self.slo0 = Zoo("slo0.in")
         self.assertEqual(self.slo0.funkcja(), 11200)
-        
+
     def test_funkcja1(self):
         self.slo1 = Zoo("slo1.in")
         self.assertEqual(self.slo1.funkcja(), 30518)
