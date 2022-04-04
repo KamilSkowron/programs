@@ -1,5 +1,6 @@
 import sys
 
+
 class Zoo:
     def __init__(self, file_name) -> None:
 
@@ -23,10 +24,12 @@ class Zoo:
         score = 0
 
         # Konstrukcja permutacji p
+
         for i in range(self.number):
             p[self.b[i]-1] = self.a[i]
 
         # Rozkład p na cykle proste i wyznaczenie parametrów cykli
+
         for j in range(self.number):
             p[self.b[j]-1] = self.a[j]
             if not odw[j]:
@@ -34,7 +37,6 @@ class Zoo:
                 sumC = 0
                 elements = []
                 x = j
-                c = 0
 
                 while (True):
                     elements.append(self.wages[x])
@@ -45,7 +47,6 @@ class Zoo:
                         break
                 c = len(elements)
 
-                
          # Obliczanie wyniku
 
                 if c >= 2:
@@ -54,4 +55,3 @@ class Zoo:
                                  (sumC + minC + (c+1) * minimal))
 
         return score
-
