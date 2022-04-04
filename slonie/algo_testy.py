@@ -28,22 +28,30 @@ class Zoo:
 
         # Rozkład p na cykle proste i wyznaczenie parametrów cykli
         for j in range(self.number):
+            p[self.b[j]-1] = self.a[j]
             if not odw[j]:
                 minC = float("inf")
                 sumC = 0
+                elements = []
                 x = j
                 c = 0
 
-                while True:
-                    sumC += self.wages[x]
+                while (True):
+                    elements.append(self.wages[x])
                     minC = min(minC, self.wages[x])
                     x = p[x] - 1
                     odw[x] = True
-                    c += 1
                     if (x == j):
                         break
+                c = len(elements)
 
+                
          # Obliczanie wyniku
-                score += min((sumC + (c-2) * minC),
-                             (sumC + minC + (c+1) * minimal))
+
+                if c >= 2:
+                    sumC = sum(elements)
+                    score += min((sumC + (c-2) * minC),
+                                 (sumC + minC + (c+1) * minimal))
+
         return score
+
