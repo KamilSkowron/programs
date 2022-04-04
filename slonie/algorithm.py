@@ -19,7 +19,7 @@ class Zoo:
         for i in range(self.number):
             self.p[self.b[i]] = self.a[i]
 
-        # Rozkład p na cykle proste
+        # Rozkład p na cykle proste i wyznaczenie parametrów cykli
         for j in range(self.number):
             if not self.odw[j]:
                 x = j + 1
@@ -29,7 +29,7 @@ class Zoo:
                     x = self.p[x]
             if len(self.C) > 1:
                 self.pakiet.append(self.C[:])
-
+                print(self.pakiet)
                 self.C.clear()
 
         # Wyznaczenie parametrów cykli i wynik

@@ -1,21 +1,15 @@
 import sys
 
+
 class Zoo:
-    def __init__(self, file_name) -> None:
+    def __init__(self) -> None:
+        self.file = sys.stdin.readlines()
+        self.number = int(self.file[0])
+        self.wages = [int(x) for x in self.file[1].strip().split()]
+        self.a = [int(x) for x in self.file[2].strip().split()]
+        self.b = [int(x) for x in self.file[3].strip().split()]
 
-        self.file = file_name
-        self.number = self.read_file(self.file, 0)[0]
-        self.wages = self.read_file(self.file, 1)
-        self.a = self.read_file(self.file, 2)
-        self.b = self.read_file(self.file, 3)
-
-    def read_file(self, file, row):
-        with open(file) as f:
-            line = f.readlines()
-            out = line[row].strip().split(" ")
-            return [int(x) for x in out]
-
-    def funkcja(self):
+    def function(self):
 
         p = [None] * self.number
         odw = [False] * self.number
@@ -25,6 +19,7 @@ class Zoo:
         # Konstrukcja permutacji p
         for i in range(self.number):
             p[self.b[i]-1] = self.a[i]
+
 
         # Rozkład p na cykle proste i wyznaczenie parametrów cykli
         for j in range(self.number):
@@ -43,7 +38,13 @@ class Zoo:
                     if (x == j):
                         break
 
+
          # Obliczanie wyniku
                 score += min((sumC + (c-2) * minC),
                              (sumC + minC + (c+1) * minimal))
+        print(score)
         return score
+
+zoo = Zoo()
+zoo.function()
+
