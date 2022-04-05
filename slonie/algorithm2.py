@@ -46,7 +46,8 @@ class Zoo:
                     sumC = sum(elements)
                     score += min((sumC + (c-2) * minC),
                                  (sumC + minC + (c+1) * minimal))
-
+                                 
+        print(score)
         return score
 
 
