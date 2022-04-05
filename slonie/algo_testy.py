@@ -18,7 +18,7 @@ class Zoo:
 
     def funkcja(self):
 
-        p = [None] * self.number
+        p = {}
         odw = [False] * self.number
         minimal = min(self.wages)
         score = 0
@@ -54,4 +54,5 @@ class Zoo:
                     score += min((sumC + (c-2) * minC),
                                  (sumC + minC + (c+1) * minimal))
 
+        print(score)
         return score
